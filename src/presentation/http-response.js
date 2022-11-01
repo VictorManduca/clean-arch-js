@@ -11,7 +11,7 @@ function notFound (res) {
 }
 
 function unprocessableEntity (res, message) {
-  return res.status(422).json({ message: message || "Missing some fields" })
+  return res.status(422).json({ message: message || 'Missing some fields' })
 }
 
 function serverError (res, error) {

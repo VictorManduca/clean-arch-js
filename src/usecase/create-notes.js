@@ -1,8 +1,7 @@
-const { model } = require("../db")
+const notesModel = require('../infra/notes-model')
+const { unprocessableEntity, created, serverError } = require('../presentation/http-response')
 
-const { unprocessableEntity, created, serverError } = require("../helpers/response")
-
-function isBodyValid (body) {
+function isBodyValid(body) {
   if (!body || !body.author || !body.content) {
     return false
   }
@@ -10,13 +9,13 @@ function isBodyValid (body) {
   return true
 }
 
-async function saveNoteInDatabase (payload) {
-  return await model.create(payload)
+async function saveNoteInDatabase(payload) {
+  return await notesModel.create(payload)
 }
 
-async function createNote (response, body) {
+async function createNote(response, body) {
   if (!isBodyValid(body)) {
-    return unprocessableEntity(response, "Missing author and/or content")
+    return unprocessableEntity(response, 'Missing author and/or content')
   }
 
   const payload = {

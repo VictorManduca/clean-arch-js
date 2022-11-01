@@ -1,9 +1,9 @@
 {
   "name": "newfire-challenge",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "src/main/server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node src/main/server.js"
   },
   "dependencies": {
     "body-parser": "1.19.0",
