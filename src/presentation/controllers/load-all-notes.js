@@ -1,9 +1,5 @@
-const notesModel = require('../infra/notes-model')
-const { unprocessableEntity, created, serverError } = require('../presentation/http-response')
-
-async function loadNotesFromDatabase() {
-  return await notesModel.findAll()
-}
+const { loadNotesFromDatabase } = require('../../infra/repository/notes-repository')
+const { notFound, ok, serverError } = require('../../presentation/http-response')
 
 async function loadAllNotes(res) {
   return await loadNotesFromDatabase()
@@ -18,6 +14,4 @@ async function loadAllNotes(res) {
     .catch(error => serverError(res, error))
 }
 
-module.exports = {
-  loadAllNotesUseCase: loadAllNotes
-}
+module.exports = loadAllNotes

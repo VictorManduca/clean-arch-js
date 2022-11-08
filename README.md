@@ -8,3 +8,4 @@ run `npm install` and then `npm run start` to start up the application.
 
 * (GET and POST) localhost:8000/notes
   * (GET) localhost:8000/notes?author=[AuthorNameHere]
+  * (GET) localhost:8000/notes/?id=[NoteIdHere]

@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize')
-const datasource = require('./datasource')
+const datasource = require('../datasource')
 
 const notesModel = datasource.define(
   'notes',

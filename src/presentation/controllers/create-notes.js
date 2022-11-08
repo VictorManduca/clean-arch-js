@@ -1,5 +1,5 @@
-const notesModel = require('../infra/notes-model')
-const { unprocessableEntity, created, serverError } = require('../presentation/http-response')
+const { saveNoteInDatabase } = require('../../infra/repository/notes-repository')
+const { unprocessableEntity, created, serverError } = require('../../presentation/http-response')
 
 function isBodyValid(body) {
   if (!body || !body.author || !body.content) {
@@ -7,10 +7,6 @@ function isBodyValid(body) {
   }
 
   return true
-}
-
-async function saveNoteInDatabase(payload) {
-  return await notesModel.create(payload)
 }
 
 async function createNote(response, body) {
@@ -29,6 +25,4 @@ async function createNote(response, body) {
     .catch(error => serverError(response, error))
 }
 
-module.exports = {
-  createNoteUseCase: createNote
-}
+module.exports = createNote

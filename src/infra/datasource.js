@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes } = require('sequelize')
+const { Sequelize } = require('sequelize')
 
 const ENV = require('../main/config/env')
 

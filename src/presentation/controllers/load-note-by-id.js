@@ -1,11 +1,5 @@
-const notesModel = require('../infra/notes-model')
-const { unprocessableEntity, created, serverError } = require('../presentation/http-response')
-
-async function loadNoteByIdFromDatabase(noteId) {
-  return await model.findOne({
-    where: { id: noteId }
-  })
-}
+const { loadNoteByIdFromDatabase } = require('../../infra/repository/notes-repository')
+const { notFound, ok, serverError } = require('../../presentation/http-response')
 
 async function loadNoteById(res, noteId) {
   return await loadNoteByIdFromDatabase(noteId)
@@ -20,6 +14,4 @@ async function loadNoteById(res, noteId) {
     .catch(error => serverError(res, error))
 }
 
-module.exports = {
-  loadNoteByIdUseCase: loadNoteById
-}
+module.exports = loadNoteById
