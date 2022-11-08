@@ -1,5 +1,5 @@
 {
-  "name": "newfire-challenge",
+  "name": "clean-arch-js",
   "version": "1.0.0",
   "main": "src/main/server.js",
   "scripts": {
