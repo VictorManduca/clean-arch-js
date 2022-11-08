@@ -1,6 +1,6 @@
 <h1 align="center">Clean Arch with Javascript</h1>
 
-## Instructions
+## Instalation and Usage
 
 ### Must have
 1. Node.js v18
