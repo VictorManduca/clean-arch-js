@@ -1,8 +1,15 @@
-<h1 align="center">Newfire Challenge</h1>
+<h1 align="center">Clean Arch with Javascript</h1>
 
 ## Instructions
-Assuming you already have installed Nodejs, NPM, cloned the project, already have the .env with the data in .env.example, simply: <br/>
-run `npm install` and then `npm run start` to start up the application.
+
+### Must have
+1. Node.js v18
+2. Docker
+
+### Step-by-step
+1. Instal the dependencies: `npm install`
+2. To run the project: `npm run start`
+  2.1 To run the project with watch mode: `npm run start:dev`
 
 ## URLs
 
