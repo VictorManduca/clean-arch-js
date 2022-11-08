@@ -8,8 +8,7 @@
 
 ### Step-by-step
 1. Instal the dependencies: `npm install`
-2. To run the project: `npm run start`
-  2.1 To run the project with watch mode: `npm run start:dev`
+2. To run the project: `npm run start`. Or with watch mode: `npm run start:dev`
 
 ## URLs
 
