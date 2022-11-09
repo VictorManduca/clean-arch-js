@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+    container_name: app
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    links:
+      - database
+
+  database:
+    image: postgres
+    container_name: db
+    environment:
+      POSTGRES_PASSWORD: newfire
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/sql/init.sql:/docker-entrypoint-initdb.d/init.sql

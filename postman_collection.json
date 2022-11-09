@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "5e70c3b1-7578-4a14-b726-775d7ac333f3",
+		"name": "Personal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Fire Collection",
+			"item": [
+				{
+					"name": "All notes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/notes",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"notes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All notes by author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/notes?author=Hugo",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"notes"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "Hugo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All notes by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/notes/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"notes",
+								":id"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "Hugo",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a note",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": \"Hugo\",\r\n    \"content\": \"Something more boring\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/notes",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"notes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
