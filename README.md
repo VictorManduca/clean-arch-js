@@ -9,7 +9,9 @@
 ### Step-by-step without docker
 1. Copy the content of `.env.example` and paste in a file called `.env`
 2. Instal the dependencies: `npm install`
-3. To run the project: `npm run start`. Or with watch mode: `npm run start:dev`
+3. Run a Postgres database with the configs in the `.env.example`
+4. Run the migrations: `db:migrate`
+3. Then run the project: `npm run start`. Or with watch mode: `npm run start:dev`
 
 ### Step-by-step with docker
 1. Copy the content of `.env.example` and paste in a file called `.env`
