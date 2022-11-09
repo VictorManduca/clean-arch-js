@@ -9,6 +9,7 @@ RUN cat .env.example > .env
 RUN npm install
 
 COPY src/ ./src
+COPY .sequelizerc ./.sequelizerc
 
 EXPOSE 8000
 

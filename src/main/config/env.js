@@ -6,7 +6,8 @@ const ENV = {
   DB_USERNAME: process.env.DB_USERNAME,
   DB_PASSWORD: process.env.DB_PASSWORD,
   DB_PORT: process.env.DB_PORT,
-  PORT: process.env.PORT
+  DB_DIALECT: process.env.DB_DIALECT,
+  PORT: process.env.PORT,
 }
 
 module.exports = ENV

@@ -1,20 +1,26 @@
+version: "3"
+
 services:
-  db:
+  app:
+    build:
+      context: .
+    container_name: app
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    links:
+      - database
+
+  database:
     image: postgres
-    container_name: newfire
+    container_name: db
     environment:
       POSTGRES_PASSWORD: newfire
     ports:
       - "5432:5432"
-
-  app:
-    container_name: "app"
-    build: .
-    networks:
-      - backend
-    ports:
-      - 8000:8000
-
-networks:
-  backend:
-    driver: bridge
+    volumes:
+      - ./database/sql/init.sql:/docker-entrypoint-initdb.d/init.sql

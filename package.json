@@ -4,7 +4,9 @@
   "main": "src/main/server.js",
   "scripts": {
     "start": "node src/main/server.js",
-    "start:dev": "node --watch src/main/server.js"
+    "db:migration": "npx sequelize-cli migration:generate --name ",
+    "db:migrate": "npx sequelize-cli db:migrate",
+    "db:undo": "npx sequelize-cli db:migrate:undo"
   },
   "dependencies": {
     "body-parser": "1.19.0",

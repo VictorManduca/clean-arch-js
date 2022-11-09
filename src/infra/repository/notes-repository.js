@@ -1,23 +1,23 @@
-const notesModel = require('../models/notes-model')
+const models = require('../models')
 
 async function loadNotesFromDatabase() {
-  return await notesModel.findAll()
+  return await models.notes.findAll()
 }
 
 async function loadNoteByIdFromDatabase(noteId) {
-  return await notesModel.findOne({
+  return await models.notes.findOne({
     where: { id: noteId }
   })
 }
 
 async function loadAllNotesByAuthorFromDatabase(authorName) {
-  return await notesModel.findAll({
+  return await models.notes.findAll({
     where: { author: authorName }
   })
 }
 
 async function saveNoteInDatabase(payload) {
-  return await notesModel.create(payload)
+  return await models.notes.create(payload)
 }
 
 module.exports = {
